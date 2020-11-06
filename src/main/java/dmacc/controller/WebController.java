@@ -16,12 +16,7 @@ import dmacc.repository.BookRepository;
 public class WebController {
 	@Autowired
 	BookRepository bookRepo;
-	/**
-	 * viewAllBooks
-	 * @param model
-	 * @return result.html
-	 * @return addNewBook(model)
-	 */
+	
 	@GetMapping({"viewBooks"})
 	public String viewAllBooks(Model model) {
 		if(bookRepo.findAll().isEmpty()) {
