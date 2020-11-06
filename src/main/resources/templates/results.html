@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+	<meta charset="UTF-8">
+	<title>All Books</title>
+	<link href="/stylesBookApp.css" rel="stylesheet"/>
+</head>
+<body>
+  <div class="contaner">
+	<form>
+		<table>
+			<tr class="record" th:each="currentBook : ${books}">
+				<td th:text="${currentBook.title}"/>
+				<td th:text="${currentBook.author.firstName}"/>
+				<td th:text="${currentBook.author.lastName}"/>
+				<td th:text="${currentBook.isbn}"/>
+				<td th:text="${currentBook.genre}"/>
+				<td><a class="listButton" th:href="@{/edit/{id}(id=${currentBook.id})}">Edit</a></td>
+				<td><a class="listButton" th:href="@{/delete/{id}(id=${currentBook.id})}">Delete</a></td>
+			</tr>
+		</table>
+	</form>
+	<a class="linkButton" href="../inputBook">Add a New Book</a>
+	<a class="linkButton" href="/home">Home</a>
+  </div>
+</body>
+</html>

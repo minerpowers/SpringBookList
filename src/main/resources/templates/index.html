@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Book List</title>
+<link href="/stylesBookApp.css" rel="stylesheet"/>
+</head>
+<body>
+  <div class="contaner">
+	<form action="/searchGenre" method=POST>
+	  <div>
+		<label>List books by genre</label><select name="genre">
+			<option value="Adventure">Adventure</option>
+			<option value="Graphic Novel">Graphic Novel</option>
+			<option value="Fantasy">Fantasy</option>
+			<option value="Horror">Horror</option>
+			<option value="Mystery">Mystery</option>
+			<option value="Romance">Romance</option>
+			<option value="Political Thriller">Political Thriller</option>
+			<option value="Science Fiction">Science Fiction</option>
+			<option value="Western">Western</option>
+			<option value="Young Adult">Young Adult</option>
+		</select>
+		<button>Search</button>
+	  </div>
+	</form>
+  
+	<a class="linkButton" href="viewBooks">View all Books</a>
+	<a class="linkButton" href="inputBook">add a new Book</a>
+  </div>
+</body>
+</html>

@@ -1,0 +1,73 @@
+@charset "UTF-8";
+
+body {
+	box-sizing: boder-box;
+	background-color : lightgrey;
+	font-size: 115%;
+}
+
+.listButton {
+	background-color: #EEEEEE;
+    padding: 1px 8px;
+    text-decoration:none;
+    border-radius:5px;
+    cursor:pointer;
+    margin: 1%;
+}
+.linkButton {
+    background-color: #EEEEEE;
+    padding: 8px 20px;
+    text-decoration:none;
+    font-weight:bold;
+    border-radius:5px;
+    cursor:pointer;
+    margin: 1%;
+}
+
+.contaner {
+	border: thin black solid;
+	width: 75%;
+	margin-left: auto;
+	margin-right: auto;
+	padding: 1%;
+	text-align: center;
+	background-color: grey;
+}
+ .contaner form{
+ 	width: 100%;
+ 	margin-top: 1%;
+ 	margin-bottom: 5%;
+ 	margin-left: auto;
+ 	margin-right: auto;
+ 	
+ }
+ 
+ .flexItem {
+ 	height: 30px;
+  	display: flex;
+  	align-items: center;
+  	justify-content: fles-start;
+ }
+ .flexItem lable{
+ 	margin: 1%;
+ 	padding: 1%;
+ 	flex: 2;
+ }
+ .flexItem input{
+ 	margin: 1%;
+ 	padding: 1%;
+ 	flex: 4;
+ }
+ .flexIterm select{
+ 	margin: 1%;
+ 	padding: 1%;
+ 	flex: 4;
+ }
+ 
+ h4{
+ 	margin: 1%;
+ }
+
+ a:link, a:visited, a:active {
+ 	color: black;
+ }

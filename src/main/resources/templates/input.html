@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+	<meta charset="UTF-8">
+	<title>Insert title here</title>
+	<link href="/stylesBookApp.css" rel="stylesheet"/>
+</head>
+<body>
+  <div class="contaner">
+	<form th:object="${newBook}" th:action="@{/update/{id}(id=${newBook.id})}" method=POST>
+	  <div class="flexItem">
+		<label>Title:</label><input name="title" th:field="*{title}">
+	  </div>
+	  <div class="flexItem">
+	  	<h4>Author</h4>
+	  </div>
+	  <div class="flexItem">
+		<label>First:</label><input name="author.first_name" th:field="*{author.firstName}">
+		<label>Last:</label><input name="author.last_name" th:field="*{author.lastName}">
+	  </div>
+	  <div class="flexItem">
+		<label>ISBN:</label><input type="number" name="isbn" th:field="*{isbn}">
+	  </div>
+	  <div class="flexItem">
+		<label>Genre</label><select name="genre" th:field="*{genre}">
+			<option value="Adventure">Adventure</option>
+			<option value="Graphic Novel">Graphic Novel</option>
+			<option value="Fantasy">Fantasy</option>
+			<option value="Horror">Horror</option>
+			<option value="Mystery">Mystery</option>
+			<option value="Romance">Romance</option>
+			<option value="Political Thriller">Political Thriller</option>
+			<option value="Science Fiction">Science Fiction</option>
+			<option value="Western">Western</option>
+			<option value="Young Adult">Young Adult</option>
+		</select>
+	  </div>
+	  <div class="flexItem">
+		<button>Submit</button>
+	  </div>
+	</form>
+	<a class="linkButton" href="viewBooks">View all Books</a>
+	<a class="linkButton" href="/home">Home</a>
+  </div>
+</body>
+</html>
