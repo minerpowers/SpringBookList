@@ -4,25 +4,51 @@
 	<meta charset="UTF-8">
 	<title>Insert title here</title>
 	<link href="/stylesBookApp.css" rel="stylesheet"/>
+	<script type="text/javascript">
+		function validate(){
+			if(document.bookForm.title.value == "") {
+				alert("Enter Title!");
+				document.bookForm.title.focus();
+				return false;
+			}
+			if(document.bookForm.firstName.value == "") {
+				alert("Enter Author's First Name!");
+				document.bookForm.firstName.focus();
+				return false;
+			}
+			if(document.bookForm.lastName.value == "") {
+				alert("Enter Author's Last Name!");
+				document.bookForm.lastName.focus();
+				return false;
+			}
+			if(isNaN(document.bookForm.isbn.value)  || document.bookForm.isbn.value == "" ||
+					document.bookForm.isbn.value.length != 13){
+				alert("Enter 13 didget ISBN number");
+				document.bookForm.isbn.focus();
+				return false;
+			}
+			return true;
+		}
+	</script>
 </head>
 <body>
   <div class="contaner">
-	<form th:object="${newBook}" th:action="@{/update/{id}(id=${newBook.id})}" method=POST>
+	<form th:action="@{/update/{id}(id=${newBook.id})}" method=POST name="bookForm" onsubmit="return(validate())">
 	  <div class="flexItem">
-		<label>Title:</label><input name="title" th:field="*{title}">
+		<label>Title:</label><input name="title" th:field="*{newBook.title}">
 	  </div>
 	  <div class="flexItem">
 	  	<h4>Author</h4>
 	  </div>
 	  <div class="flexItem">
-		<label>First:</label><input name="author.first_name" th:field="*{author.firstName}">
-		<label>Last:</label><input name="author.last_name" th:field="*{author.lastName}">
+		<label>First:</label><input name="firstName" th:field="*{newAuthor.firstName}">
+		<label>Last:</label><input name="lastName" th:field="*{newAuthor.lastName}">
 	  </div>
 	  <div class="flexItem">
-		<label>ISBN:</label><input type="number" name="isbn" th:field="*{isbn}">
+		<label>ISBN:</label><input type="number" name="isbn" th:field="*{newBook.isbn}">
 	  </div>
 	  <div class="flexItem">
-		<label>Genre</label><select name="genre" th:field="*{genre}">
+		<label>Genre</label><select name="genre" th:field="*{newBook.genre}">
 			<option value="Adventure">Adventure</option>
 			<option value="Graphic Novel">Graphic Novel</option>
 			<option value="Fantasy">Fantasy</option>
